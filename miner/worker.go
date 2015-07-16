@@ -264,6 +264,7 @@ func (self *worker) wait() {
 			}
 			block := result.Block
 
+			self.current.state.Sync()
 			if self.fullValidation {
 				if _, err := self.chain.InsertChain(types.Blocks{block}); err != nil {
 					glog.V(logger.Error).Infoln("mining err", err)
@@ -490,7 +491,6 @@ func (self *worker) commitNewWork() {
 		// commit state root after all state transitions.
 		core.AccumulateRewards(self.current.state, header, uncles)
 		current.state.SyncObjects()
-		self.current.state.Sync()
 		header.Root = current.state.Root()
 	}
 

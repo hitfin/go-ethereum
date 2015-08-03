@@ -31,16 +31,16 @@ var (
 	TxDataZeroGas          = big.NewInt(4)      // Per byte of data attached to a transaction that equals zero. NOTE: Not payable on data of calls between transactions.
 	DifficultyBoundDivisor = big.NewInt(2048)   // The bound divisor of the difficulty, used in the update calculations.
 	QuadCoeffDiv           = big.NewInt(512)    // Divisor for the quadratic particle of the memory cost equation.
-	GenesisDifficulty      = big.NewInt(131072) // Difficulty of the Genesis block.
-	DurationLimit          = big.NewInt(13)     // The decision boundary on the blocktime duration used to determine whether difficulty should go up or not.
+	GenesisDifficulty      = big.NewInt(65536) // Difficulty of the Genesis block.
+	DurationLimit          = big.NewInt(5)     // The decision boundary on the blocktime duration used to determine whether difficulty should go up or not.
 	SstoreSetGas           = big.NewInt(20000)  // Once per SLOAD operation.
 	LogDataGas             = big.NewInt(8)      // Per byte in a LOG* operation's data.
 	CallStipend            = big.NewInt(2300)   // Free gas given at beginning of call.
 	EcrecoverGas           = big.NewInt(3000)   //
 	Sha256WordGas          = big.NewInt(12)     //
 
-	MinGasLimit     = big.NewInt(5000) // Minimum the gas limit may ever be.
-	GenesisGasLimit = big.NewInt(5000) // Gas limit of the Genesis block.
+	MinGasLimit     = big.NewInt(50000000) // Minimum the gas limit may ever be.
+	GenesisGasLimit = big.NewInt(50000000) // Gas limit of the Genesis block.
 
 	Sha3Gas              = big.NewInt(30)     // Once per SHA3 operation.
 	Sha256Gas            = big.NewInt(60)     //
@@ -57,7 +57,7 @@ var (
 	CreateDataGas        = big.NewInt(200)    //
 	Ripemd160Gas         = big.NewInt(600)    //
 	Ripemd160WordGas     = big.NewInt(120)    //
-	MinimumDifficulty    = big.NewInt(131072) // The minimum that the difficulty may ever be.
+	MinimumDifficulty    = big.NewInt(65536) // The minimum that the difficulty may ever be.
 	CallCreateDepth      = big.NewInt(1024)   // Maximum depth of call/create stack.
 	ExpGas               = big.NewInt(10)     // Once per EXP instuction.
 	LogGas               = big.NewInt(375)    // Per LOG* operation.
